@@ -5,6 +5,9 @@ import { View, Text, Button, ActivityIndicator } from "react-native";
 interface User {
   id: number;
   name: string;
+  company: {
+    name: string;
+  };
 }
 
 export default function Index() {
@@ -50,6 +53,7 @@ export default function Index() {
         <View>
           <Text>User ID: {user?.id}</Text>
           <Text>User Name: {user?.name}</Text>
+          <Text>User Company: {user?.company.name}</Text>
         </View>
       )}
       <Button title="Reload" onPress={() => setUserId((prev) => prev + 1)} />
